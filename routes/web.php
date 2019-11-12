@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/examples/{page}', function ($page) {
-    return view("examples.$page");
+Route::get('/menu/{page}', function ($page) {
+    return view("menu.$page");
 });
 
 Auth::routes();

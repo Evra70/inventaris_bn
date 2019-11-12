@@ -57,19 +57,19 @@
                     <div class=" dropdown-header noti-title">
                         <h6 class="text-overflow m-0">Welcome!</h6>
                     </div>
-                    <a href="examples/profile" class="dropdown-item">
+                    <a href="menu/profile" class="dropdown-item">
                         <i class="ni ni-single-02"></i>
                         <span>My profile</span>
                     </a>
-                    <a href="examples/profile" class="dropdown-item">
+                    <a href="menu/profile" class="dropdown-item">
                         <i class="ni ni-settings-gear-65"></i>
                         <span>Settings</span>
                     </a>
-                    <a href="examples/profile" class="dropdown-item">
+                    <a href="menu/profile" class="dropdown-item">
                         <i class="ni ni-calendar-grid-58"></i>
                         <span>Activity</span>
                     </a>
-                    <a href="examples/profile" class="dropdown-item">
+                    <a href="menu/profile" class="dropdown-item">
                         <i class="ni ni-support-16"></i>
                         <span>Support</span>
                     </a>
@@ -102,37 +102,37 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">
-                        <i class="ni ni-tv-2 text-primary"></i> Dashboard
+                    <a class="nav-link" href="/home">
+                        <i class="ni ni-tv-2 text-primary"></i> Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="examples/icons">
+                    <a class="nav-link" href="menu/icons">
                         <i class="ni ni-planet text-blue"></i> Icons
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="examples/maps">
+                    <a class="nav-link" href="menu/maps">
                         <i class="ni ni-pin-3 text-orange"></i> Maps
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="examples/profile">
+                    <a class="nav-link" href="menu/profile">
                         <i class="ni ni-single-02 text-yellow"></i> User profile
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="examples/tables">
+                    <a class="nav-link" href="menu/tables">
                         <i class="ni ni-bullet-list-67 text-red"></i> Tables
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="examples/login">
+                    <a class="nav-link" href="menu/login">
                         <i class="ni ni-key-25 text-info"></i> Login
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="examples/register">
+                    <a class="nav-link" href="menu/register">
                         <i class="ni ni-circle-08 text-pink"></i> Register
                     </a>
                 </li>
