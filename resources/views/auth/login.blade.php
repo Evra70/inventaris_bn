@@ -56,6 +56,11 @@
                     <div class="card-body px-lg-5 py-lg-5">
                         <form method="POST" action="/proses_login">
                             {{ csrf_field() }}
+                            @if (session('status'))
+                                <div class="alert alert-{{ session('proses') }}">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
                             <div class="form-group mb-3{{ $errors->has('username') ? ' has-error' : '' }}">
                                 <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">
@@ -95,10 +100,7 @@
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-6">
-                        <a href="#" class="text-light"><small>Forgot password?</small></a>
-                    </div>
-                    <div class="col-6 text-right">
+                    <div class="col-12 " style="margin-bottom: 15px;text-align: center;">
                         <a href="/registrasi">Create new account</a>
                     </div>
                 </div>

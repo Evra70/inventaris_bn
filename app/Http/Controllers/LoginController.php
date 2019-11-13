@@ -15,13 +15,15 @@ class LoginController extends Controller
     public function masuk(Request $request){
         $username = $request->username;
         $password = md5($request->password);
-        $user = User::where('username',$username)->where('password',$password)->first();
+        $user = User::where('username',$username)
+            ->where('password',$password)
+            ->where('active','Y')->first();
         if(isset($user)){
             $level=$user->level;
             Auth::guard("$level")->LoginUsingId($user['user_id']);
             return redirect("/$level");
         }else{
-            return $user." | ".$username." | ".$password;
+            return redirect('/')->with('status', 'Login Gagal !!!')->with('proses','danger');
         }
 
     }

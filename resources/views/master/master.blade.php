@@ -74,7 +74,7 @@
                         <span>Support</span>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="#!" class="dropdown-item">
+                    <a href="/proses_logout" class="dropdown-item">
                         <i class="ni ni-user-run"></i>
                         <span>Logout</span>
                     </a>
@@ -106,59 +106,95 @@
                         <i class="ni ni-tv-2 text-primary"></i> Home
                     </a>
                 </li>
+            </ul>
+            @if(Auth::guard('administrator')->check())
+                <hr class="my-3">
+                <!-- Heading -->
+                <h6 class="navbar-heading text-muted">Data User</h6>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu/icons">
+                            <i class="ni ni-planet text-blue"></i> Daftar User
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu/maps">
+                            <i class="ni ni-pin-3 text-orange"></i> Daftar Calon User
+                        </a>
+                    </li>
+                </ul>
+            @endif
+            @if(Auth::guard('administrator')->check() || Auth::guard('peminjam')->check())
+            <hr class="my-3">
+            <!-- Heading -->
+            <h6 class="navbar-heading text-muted">Entri Peminjaman Barang</h6>
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="menu/icons">
-                        <i class="ni ni-planet text-blue"></i> Icons
+                        <i class="ni ni-planet text-blue"></i> Daftar Peminjaman Barang
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="menu/maps">
-                        <i class="ni ni-pin-3 text-orange"></i> Maps
+                        <i class="ni ni-pin-3 text-orange"></i> Peminjaman Barang
                     </a>
                 </li>
+            </ul>
+            @endif
+            @if(Auth::guard('administrator')->check() || Auth::guard('manajemen')->check())
+            <hr class="my-3">
+            <!-- Heading -->
+            <h6 class="navbar-heading text-muted">Entri Data Barang</h6>
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="menu/profile">
-                        <i class="ni ni-single-02 text-yellow"></i> User profile
+                        <i class="ni ni-single-02 text-yellow"></i> Daftar Barang
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="menu/tables">
-                        <i class="ni ni-bullet-list-67 text-red"></i> Tables
+                        <i class="ni ni-bullet-list-67 text-red"></i> Daftar Barang Masuk
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="menu/login">
-                        <i class="ni ni-key-25 text-info"></i> Login
+                        <i class="ni ni-key-25 text-info"></i> Daftar Barang Keluar
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="menu/register">
-                        <i class="ni ni-circle-08 text-pink"></i> Register
+                        <i class="ni ni-circle-08 text-pink"></i> Daftar Suplier
                     </a>
                 </li>
             </ul>
-            {{--<!-- Divider -->--}}
-            {{--<hr class="my-3">--}}
-            {{--<!-- Heading -->--}}
-            {{--<h6 class="navbar-heading text-muted">Documentation</h6>--}}
-            {{--<!-- Navigation -->--}}
-            {{--<ul class="navbar-nav mb-md-3">--}}
-                {{--<li class="nav-item">--}}
-                    {{--<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">--}}
-                        {{--<i class="ni ni-spaceship"></i> Getting started--}}
-                    {{--</a>--}}
-                {{--</li>--}}
-                {{--<li class="nav-item">--}}
-                    {{--<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">--}}
-                        {{--<i class="ni ni-palette"></i> Foundation--}}
-                    {{--</a>--}}
-                {{--</li>--}}
-                {{--<li class="nav-item">--}}
-                    {{--<a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">--}}
-                        {{--<i class="ni ni-ui-04"></i> Components--}}
-                    {{--</a>--}}
-                {{--</li>--}}
-            {{--</ul>--}}
+            @endif
+            @if(Auth::guard('manajemen')->check())
+            <hr class="my-3">
+            <!-- Heading -->
+            <h6 class="navbar-heading text-muted">Generate Laporan</h6>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="menu/profile">
+                        <i class="ni ni-single-02 text-yellow"></i> Laporan Barang Masuk
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu/tables">
+                        <i class="ni ni-bullet-list-67 text-red"></i> Laporan Barang Keluar
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu/login">
+                        <i class="ni ni-key-25 text-info"></i> Laporan Peminjaman Barang
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu/register">
+                        <i class="ni ni-circle-08 text-pink"></i> Laporan Daftar Barang
+                    </a>
+                </li>
+            </ul>
+                @endif
         </div>
     </div>
 </nav>
@@ -178,7 +214,7 @@
                   <img alt="Image placeholder" src="/asset_template/img/theme/team-4-800x800.jpg">
                 </span>
                             <div class="media-body ml-2 d-none d-lg-block">
-                                <span class="mb-0 text-sm  font-weight-bold">@yield('user-login')</span>
+                                <span class="mb-0 text-sm  font-weight-bold">{{Auth::user()->fullname}}</span>
                             </div>
                         </div>
                     </a>
@@ -187,7 +223,7 @@
                             <h6 class="text-overflow m-0">Welcome!</h6>
                         </div>
                         <div class="dropdown-divider"></div>
-                        <a href="#!" class="dropdown-item">
+                        <a href="/proses_logout" class="dropdown-item">
                             <i class="ni ni-user-run"></i>
                             <span>Logout</span>
                         </a>

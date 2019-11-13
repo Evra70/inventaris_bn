@@ -11,17 +11,11 @@
 |
 */
 
-Route::get('/administrator', function () {
-    return view("administrator.administrator");
-})->middleware('auth:administrator');
+Route::get('/administrator', "HomeController@index")->middleware('auth:administrator');
 
-Route::get('/manajemen', function () {
-    return view("manajemen.manajemen");
-})->middleware('auth:manajemen');
+Route::get('/manajemen', "HomeController@index")->middleware('auth:manajemen');
 
-Route::get('/peminjam', function () {
-    return view("peminjam.peminjam");
-})->middleware('auth:peminjam');
+Route::get('/peminjam', "HomeController@index")->middleware('auth:peminjam');
 
 Route::get('/', function () {
     return view("auth.login");

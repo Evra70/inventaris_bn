@@ -2,8 +2,6 @@
 
 @section('page-title', 'Home')
 
-@section('user-login','Ephraim Jehudah')
-
 @section('title','Home')
 
 @section('content')
