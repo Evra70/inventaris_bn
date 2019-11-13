@@ -54,22 +54,32 @@
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-transparent pb-5">
                     <div class="card-body px-lg-5 py-lg-5">
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="/proses_login">
                             {{ csrf_field() }}
-                            <div class="form-group mb-3">
+                            <div class="form-group mb-3{{ $errors->has('username') ? ' has-error' : '' }}">
                                 <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Email" type="text" name="username">
+                                    <input class="form-control" placeholder="Username" type="text" name="username">
+                                    @if ($errors->has('username'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
                                     <input class="form-control" placeholder="Password" type="password" name="password">
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="custom-control custom-control-alternative custom-checkbox">
@@ -79,7 +89,7 @@
                                 </label>
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn btn-primary my-4">Sign in</button>
+                                <input type="submit" class="btn btn-primary my-4" value="Sign in">
                             </div>
                         </form>
                     </div>
@@ -89,7 +99,7 @@
                         <a href="#" class="text-light"><small>Forgot password?</small></a>
                     </div>
                     <div class="col-6 text-right">
-                        <a href="{{ route('register') }}">Create new account</a>
+                        <a href="/registrasi">Create new account</a>
                     </div>
                 </div>
             </div>

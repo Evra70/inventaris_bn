@@ -77,12 +77,29 @@
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-body px-lg-5 py-lg-5">
                         <form role="form">
-                            <div class="form-group">
+                            <div class="form-group{{ $errors->has('fullname') ? ' has-error' : '' }}">
                                 <div class="input-group input-group-alternative mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Name" type="text" name="name">
+                                    <input class="form-control" placeholder="Fullname" type="text" name="fullname">
+                                    @if ($errors->has('fullname'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('fullname') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                                <div class="input-group input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="Username" type="username">
+                                    @if ($errors->has('username'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -90,27 +107,25 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Email" type="email">
+                                    <select class="form-control" name="level">
+                                        <option value=""></option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="input-group input-group-alternative mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                                    </div>
-                                    <input class="form-control" placeholder="Email" type="email">
-                                </div>
-                            </div>
-                            <div class="form-group">
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
                                     <input class="form-control" placeholder="Password" type="password">
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn btn-primary mt-4">Create account</button>
+                                <input type="submit" class="btn btn-primary mt-4" value="Create account">
                             </div>
                         </form>
                     </div>

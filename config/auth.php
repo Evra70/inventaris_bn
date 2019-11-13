@@ -45,6 +45,31 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+        'administrator' => [
+            'driver' => 'session',
+            'provider' => 'administrator',
+        ],
+
+        'apiadministrator' => [
+            'driver' => 'token',
+            'provider' => 'administrator',
+        ],
+        'manajemen' => [
+            'driver' => 'session',
+            'provider' => 'manajemen',
+        ],
+        'apimanajemen' => [
+            'driver' => 'token',
+            'provider' => 'manajemen',
+        ],
+        'peminjam' => [
+            'driver' => 'session',
+            'provider' => 'peminjam',
+        ],
+        'apipeminjam' => [
+            'driver' => 'token',
+            'provider' => 'peminjam',
+        ],
     ],
 
     /*
@@ -66,6 +91,18 @@ return [
 
     'providers' => [
         'users' => [
+            'driver' => 'eloquent',
+            'model' => App\User::class,
+        ],
+        'administrator' => [
+            'driver' => 'eloquent',
+            'model' => App\User::class,
+        ],
+        'manajemen' => [
+            'driver' => 'eloquent',
+            'model' => App\User::class,
+        ],
+        'peminjam' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],

@@ -11,14 +11,27 @@
 |
 */
 
+Route::get('/administrator', function () {
+    return view("administrator.administrator");
+})->middleware('auth:administrator');
+
+Route::get('/manajemen', function () {
+    return view("manajemen.manajemen");
+})->middleware('auth:manajemen');
+
+Route::get('/peminjam', function () {
+    return view("peminjam.peminjam");
+})->middleware('auth:peminjam');
+
 Route::get('/', function () {
-    return view('index');
-});
+    return view("auth.login");
+})->middleware('guest');
 
-Route::get('/menu/{page}', function ($page) {
-    return view("menu.$page");
-});
+Route::get('/login', [ 'as' => 'login',
+            'uses' => 'LoginController@index']
+            )->middleware('guest');
 
-Auth::routes();
+Route::post('/proses_login', 'LoginController@masuk');
+Route::get('/proses_logout', 'LoginController@keluar');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/registrasi', 'RegistrasiController@index')->middleware('guest');
