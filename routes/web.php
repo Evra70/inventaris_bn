@@ -28,4 +28,8 @@ Route::get('/login', [ 'as' => 'login',
 Route::post('/proses_login', 'LoginController@masuk');
 Route::get('/proses_logout', 'LoginController@keluar');
 
+Route::get('/pagenotfound', [ 'as' => 'notfound',
+    'uses' => 'HomeController@pageNotFound']);
+
 Route::get('/registrasi', 'RegistrasiController@index')->middleware('guest');
+Route::post('/proses_registrasi', 'RegistrasiController@registrasi');

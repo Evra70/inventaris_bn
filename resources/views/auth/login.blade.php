@@ -66,13 +66,13 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Username" type="text" name="username">
-                                    @if ($errors->has('username'))
-                                        <span class="help-block">
+                                    <input class="form-control" placeholder="Username" value="{{old('username')}}" type="text" name="username">
+                                </div>
+                                @if ($errors->has('username'))
+                                    <span class="help-block" style="color:red;">
                                         <strong>{{ $errors->first('username') }}</strong>
                                     </span>
-                                    @endif
-                                </div>
+                                @endif
                             </div>
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <div class="input-group input-group-alternative">
@@ -80,12 +80,12 @@
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
                                     <input class="form-control" placeholder="Password" type="password" name="password">
-                                    @if ($errors->has('password'))
-                                        <span class="help-block">
+                                </div>
+                                @if ($errors->has('password'))
+                                    <span class="help-block" style="color:red;">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                    @endif
-                                </div>
+                                @endif
                             </div>
                             <div class="custom-control custom-control-alternative custom-checkbox">
                                 <input type="checkbox" name="remember" class="custom-control-input" id=" customCheckLogin" {{ old('remember') ? 'checked' : '' }}>
