@@ -35,15 +35,6 @@
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
             <li class="nav-item dropdown">
-                <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="ni ni-bell-55"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,22 +48,6 @@
                     <div class=" dropdown-header noti-title">
                         <h6 class="text-overflow m-0">Welcome!</h6>
                     </div>
-                    <a href="menu/profile" class="dropdown-item">
-                        <i class="ni ni-single-02"></i>
-                        <span>My profile</span>
-                    </a>
-                    <a href="menu/profile" class="dropdown-item">
-                        <i class="ni ni-settings-gear-65"></i>
-                        <span>Settings</span>
-                    </a>
-                    <a href="menu/profile" class="dropdown-item">
-                        <i class="ni ni-calendar-grid-58"></i>
-                        <span>Activity</span>
-                    </a>
-                    <a href="menu/profile" class="dropdown-item">
-                        <i class="ni ni-support-16"></i>
-                        <span>Support</span>
-                    </a>
                     <div class="dropdown-divider"></div>
                     <a href="/proses_logout" class="dropdown-item">
                         <i class="ni ni-user-run"></i>
@@ -102,7 +77,7 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/home">
+                    <a class="nav-link" href="/">
                         <i class="ni ni-tv-2 text-primary"></i> Home
                     </a>
                 </li>
@@ -110,16 +85,26 @@
             @if(Auth::guard('administrator')->check())
                 <hr class="my-3">
                 <!-- Heading -->
-                <h6 class="navbar-heading text-muted">Data User</h6>
+                <h6 class="navbar-heading text-muted">Data User & Suplier</h6>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="menu/icons">
-                            <i class="ni ni-planet text-blue"></i> Daftar User
+                            <i class="ni ni-badge text-blue"></i> Daftar User
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="menu/maps">
-                            <i class="ni ni-pin-3 text-orange"></i> Daftar Calon User
+                            <i class="ni ni-app text-blue"></i> Tambah User
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu/icons">
+                            <i class="ni ni-bullet-list-67 text-blue"></i> Daftar Suplier
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu/icons">
+                            <i class="ni ni-box-2 text-blue"></i> Tambah Suplier
                         </a>
                     </li>
                 </ul>
@@ -131,12 +116,12 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="menu/icons">
-                        <i class="ni ni-planet text-blue"></i> Daftar Peminjaman Barang
+                        <i class="ni ni-bullet-list-67 text-blue"></i> Daftar Peminjaman Barang
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="menu/maps">
-                        <i class="ni ni-pin-3 text-orange"></i> Peminjaman Barang
+                        <i class="ni ni-bag-17 text-blue"></i> Peminjaman Barang
                     </a>
                 </li>
             </ul>
@@ -148,22 +133,22 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="menu/profile">
-                        <i class="ni ni-single-02 text-yellow"></i> Daftar Barang
+                        <i class="ni ni-archive-2 text-blue"></i> Daftar Barang
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="menu/tables">
-                        <i class="ni ni-bullet-list-67 text-red"></i> Daftar Barang Masuk
+                        <i class="ni ni-bold-left text-blue"></i> Daftar Barang Masuk
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="menu/login">
-                        <i class="ni ni-key-25 text-info"></i> Daftar Barang Keluar
+                        <i class="ni ni-bold-right text-blue"></i> Daftar Barang Keluar
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="menu/register">
-                        <i class="ni ni-circle-08 text-pink"></i> Daftar Suplier
+                        <i class="ni ni-delivery-fast text-blue"></i> Daftar Suplier
                     </a>
                 </li>
             </ul>
@@ -175,12 +160,12 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="menu/profile">
-                        <i class="ni ni-single-02 text-yellow"></i> Laporan Barang Masuk
+                        <i class="ni ni-cart text-blue"></i> Laporan Barang Masuk
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="menu/tables">
-                        <i class="ni ni-bullet-list-67 text-red"></i> Laporan Barang Keluar
+                        <i class="ni ni-curved-next text-blue"></i> Laporan Barang Keluar
                     </a>
                 </li>
                 <li class="nav-item">
@@ -237,92 +222,6 @@
         <div class="container-fluid">
             <div class="header-body">
                 <!-- Card stats -->
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
-                                        <span class="h2 font-weight-bold mb-0">350,897</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                            <i class="fas fa-chart-bar"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="mt-3 mb-0 text-muted text-sm">
-                                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                                    <span class="text-nowrap">Since last month</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
-                                        <span class="h2 font-weight-bold mb-0">2,356</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                            <i class="fas fa-chart-pie"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="mt-3 mb-0 text-muted text-sm">
-                                    <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                                    <span class="text-nowrap">Since last week</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
-                                        <span class="h2 font-weight-bold mb-0">924</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                                            <i class="fas fa-users"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="mt-3 mb-0 text-muted text-sm">
-                                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                                    <span class="text-nowrap">Since yesterday</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                                        <span class="h2 font-weight-bold mb-0">49,65%</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                            <i class="fas fa-percent"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="mt-3 mb-0 text-muted text-sm">
-                                    <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                                    <span class="text-nowrap">Since last month</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

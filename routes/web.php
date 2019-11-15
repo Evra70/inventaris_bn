@@ -17,9 +17,7 @@ Route::get('/manajemen', "HomeController@index")->middleware('auth:manajemen');
 
 Route::get('/peminjam', "HomeController@index")->middleware('auth:peminjam');
 
-Route::get('/', function () {
-    return view("auth.login");
-})->middleware('guest');
+Route::get('/','LoginController@index')->middleware('guest');
 
 Route::get('/login', [ 'as' => 'login',
             'uses' => 'LoginController@index']

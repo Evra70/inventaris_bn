@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
 
     public function index(){
-        return view('auth.login');
+        $adminCheck = DB::select("SELECT 1 FROM t_user");
+        return view("auth.login",['asAdmin' => $adminCheck]);
     }
     public function masuk(Request $request){
         $this->validate($request,[
@@ -22,15 +24,9 @@ class LoginController extends Controller
         $user = User::where('username',$username)
             ->where('password',$password)->first();
         if(isset($user)){
-            if ($user->active == 'D'){
-                $alert = "info";
-                $status = "Akun Belum Di Setujui Administrator !";
-               return $this->redirectWithStatus($alert,$status);
-            }else{
-                $level=$user->level;
-                Auth::guard("$level")->LoginUsingId($user['user_id']);
-                return redirect("/$level");
-            }
+            $level=$user->level;
+            Auth::guard("$level")->LoginUsingId($user['user_id']);
+            return redirect("/$level");
         }else{
             $alert = "danger";
             $status = "Anda Gagal Login ! ";
@@ -53,4 +49,5 @@ class LoginController extends Controller
         }
         return redirect('/');
     }
+
 }

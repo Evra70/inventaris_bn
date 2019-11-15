@@ -99,11 +99,13 @@
                         </form>
                     </div>
                 </div>
+                @if(count($asAdmin) == 0)
                 <div class="row mt-3">
                     <div class="col-12 " style="margin-bottom: 15px;text-align: center;">
                         <a href="/registrasi">Create new account</a>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </div>

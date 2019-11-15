@@ -9,5 +9,5 @@ class User extends Authenticatable
 {
    protected $table = "t_user";
    protected $primaryKey = "user_id";
-   public $timestamps = false;
+   public $timestamps = true;
 }

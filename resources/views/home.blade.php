@@ -4,24 +4,25 @@
 
 @section('title','Home')
 
+@section('script')
+@endsection
+
 @section('content')
   <div class="row">
     <div class="col">
       <div class="card shadow">
         <div class="card-header bg-transparent">
-          <h3 class="mb-0">Icons</h3>
+          <h3 class="mb-0 text-center">INVENTARIS BN</h3>
         </div>
         <div class="card-body">
-          <div class="row icon-examples">
-            <div class="col-lg-3 col-md-6">
-              <button type="button" class="btn-icon-clipboard" data-clipboard-text="active-40" title="Copy to clipboard">
-                <div>
-                  <i class="ni ni-active-40"></i>
-                  <span>active-40</span>
-                </div>
-              </button>
-            </div>
-          </div>
+          <h1 style="text-align: center;">Selamat Datang {{Auth::user()->fullname}}!!!</h1>
+          <ol>
+            <li>Aplikasi yang Berguna untuk Membantu Inventaris</li>
+            <li>Menggunakan Sistem Multi User</li>
+            <li>Peminjam Hanya Bisa Meminjam Barang</li>
+            <li>Manajemen Melihat Hasil Laporan</li>
+            <li>Sistem Dikelola Oleh Administrator </li>
+          </ol>
         </div>
       </div>
     </div>

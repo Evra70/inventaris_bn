@@ -109,24 +109,6 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="form-group{{ $errors->has('level') ? ' has-error' : '' }}">
-                                <div class="input-group input-group-alternative mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
-                                    </div>
-                                    <select class="form-control" name="level">
-                                        <option value="">--Pilih Level--</option>
-                                        <option value="administrator">Administrator</option>
-                                        <option value="manajemen">Manajemen</option>
-                                        <option value="peminjam">Peminjam</option>
-                                    </select>
-                                </div>
-                                @if ($errors->has('level'))
-                                    <span class="help-block" style="color:red;">
-                                        <strong>{{ $errors->first('level') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">
@@ -142,6 +124,9 @@
                             </div>
                             <div class="text-center">
                                 <input type="submit" class="btn btn-primary mt-4" value="Create account">
+                            </div>
+                            <div class="text-center">
+                                <a href="/" class="btn btn-info mt-4" >Back</a>
                             </div>
                         </form>
                     </div>
