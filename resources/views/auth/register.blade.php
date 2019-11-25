@@ -88,7 +88,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Fullname" type="text" name="fullname">
+                                    <input class="form-control" autocomplete="off" placeholder="Fullname" type="text" name="fullname">
                                 </div>
                                 @if ($errors->has('fullname'))
                                     <span class="help-block" style="color:red;">
@@ -101,7 +101,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Username" type="text" name="username">
+                                    <input class="form-control" autocomplete="off" placeholder="Username" type="text" name="username">
                                 </div>
                                 @if ($errors->has('username'))
                                     <span class="help-block" style="color:red;">

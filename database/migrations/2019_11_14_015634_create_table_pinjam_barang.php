@@ -32,6 +32,6 @@ class CreateTablePinjamBarang extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('t_barang');
+        Schema::dropIfExists('t_pinjam_barang');
     }
 }

@@ -19,7 +19,6 @@ class CreateTableBarang extends Migration
             $table->string('spesifikasi');
             $table->string('lokasi');
             $table->string('kondisi');
-            $table->integer('jumlah_barang');
             $table->string('sumber_dana');
         });
     }

@@ -15,9 +15,9 @@ class CreateTableStok extends Migration
     {
         Schema::create('t_stok', function (Blueprint $table) {
             $table->increments('barang_id');
-            $table->string('nama_barang');
             $table->integer('jml_masuk');
             $table->integer('jml_keluar');
+            $table->integer('jml_pinjam');
             $table->integer('total_barang');
         });
     }
@@ -27,6 +27,7 @@ class CreateTableStok extends Migration
      *
      * @return void
      */
+
     public function down()
     {
         Schema::dropIfExists('t_stok');

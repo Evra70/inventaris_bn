@@ -88,22 +88,22 @@
                 <h6 class="navbar-heading text-muted">Data User & Suplier</h6>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="menu/icons">
+                        <a class="nav-link" href="/menu/userList">
                             <i class="ni ni-badge text-blue"></i> Daftar User
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="menu/maps">
+                        <a class="nav-link" href="/menu/addUserForm">
                             <i class="ni ni-app text-blue"></i> Tambah User
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="menu/icons">
+                        <a class="nav-link" href="/menu/suplierList">
                             <i class="ni ni-bullet-list-67 text-blue"></i> Daftar Suplier
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="menu/icons">
+                        <a class="nav-link" href="/menu/addSuplierForm">
                             <i class="ni ni-box-2 text-blue"></i> Tambah Suplier
                         </a>
                     </li>
@@ -132,23 +132,18 @@
             <h6 class="navbar-heading text-muted">Entri Data Barang</h6>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="menu/profile">
+                    <a class="nav-link" href="/menu/barangList">
                         <i class="ni ni-archive-2 text-blue"></i> Daftar Barang
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="menu/tables">
+                    <a class="nav-link" href="/menu/barangMasukList">
                         <i class="ni ni-bold-left text-blue"></i> Daftar Barang Masuk
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="menu/login">
+                    <a class="nav-link" href="/menu/barangKeluarList">
                         <i class="ni ni-bold-right text-blue"></i> Daftar Barang Keluar
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="menu/register">
-                        <i class="ni ni-delivery-fast text-blue"></i> Daftar Suplier
                     </a>
                 </li>
             </ul>
@@ -170,12 +165,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="menu/login">
-                        <i class="ni ni-key-25 text-info"></i> Laporan Peminjaman Barang
+                        <i class="ni ni-ruler-pencil text-blue"></i> Laporan Peminjaman Barang
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="menu/register">
-                        <i class="ni ni-circle-08 text-pink"></i> Laporan Daftar Barang
+                        <i class="ni ni-single-copy-04 text-blue"></i> Laporan Daftar Barang
                     </a>
                 </li>
             </ul>
@@ -218,16 +213,10 @@
         </div>
     </nav>
     <!-- Header -->
-    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-        <div class="container-fluid">
-            <div class="header-body">
-                <!-- Card stats -->
-            </div>
-        </div>
-    </div>
+    @yield('header-content')
     <!-- Page content -->
     <div class="container-fluid mt--7">
-        @yield('content')
+        @yield('body-content')
         <!-- Footer -->
         <footer class="footer">
             <div class="row align-items-center justify-content-xl-between">

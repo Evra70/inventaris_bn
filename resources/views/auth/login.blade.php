@@ -66,7 +66,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Username" value="{{old('username')}}" type="text" name="username">
+                                    <input class="form-control" autocomplete="off" placeholder="Username" value="{{old('username')}}" type="text" name="username">
                                 </div>
                                 @if ($errors->has('username'))
                                     <span class="help-block" style="color:red;">

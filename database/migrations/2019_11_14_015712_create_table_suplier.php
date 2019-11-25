@@ -16,7 +16,7 @@ class CreateTableSuplier extends Migration
         Schema::create('t_suplier', function (Blueprint $table) {
             $table->increments('suplier_id');
             $table->string('nama_suplier');
-            $table->string('alamat_suplier');
+            $table->text('alamat_suplier');
             $table->string('telp_suplier');
         });
     }
