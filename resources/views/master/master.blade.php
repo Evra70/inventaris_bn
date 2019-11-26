@@ -115,12 +115,12 @@
             <h6 class="navbar-heading text-muted">Entri Peminjaman Barang</h6>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="menu/icons">
+                    <a class="nav-link" href="/menu/peminjamanBarangList">
                         <i class="ni ni-bullet-list-67 text-blue"></i> Daftar Peminjaman Barang
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="menu/maps">
+                    <a class="nav-link" href="/menu/addPeminjamanBarangForm">
                         <i class="ni ni-bag-17 text-blue"></i> Peminjaman Barang
                     </a>
                 </li>

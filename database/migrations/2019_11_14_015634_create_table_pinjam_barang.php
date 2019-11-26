@@ -15,13 +15,13 @@ class CreateTablePinjamBarang extends Migration
     {
         Schema::create('t_pinjam_barang', function (Blueprint $table) {
             $table->increments('pinjam_id');
-            $table->string('peminjam_id');
-            $table->string('tgl_pinjam');
+            $table->integer('peminjam_id');
+            $table->string('tgl_pinjam',16);
             $table->integer('barang_id');
-            $table->string('nama_barang');
+            $table->string('nama_barang',40);
             $table->integer('jml_barang');
-            $table->string('tgl_kembali');
-            $table->string('kondisi');
+            $table->string('tgl_kembali',16);
+            $table->string('kondisi',1);
         });
     }
 

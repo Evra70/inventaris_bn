@@ -72,8 +72,8 @@
                                         <i class="fas fa-ellipsis-v"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" href="/barangKeluar/{{$barangKeluar->barang_masuk_id}}/delete">Delete</a>
-                                        <a class="dropdown-item" href="/menu/editBarangKeluarForm/{{$barangKeluar->barang_masuk_id}}">Edit</a>
+                                        <a class="dropdown-item" href="/barangKeluar/{{$barangKeluar->barang_keluar_id}}/delete">Delete</a>
+                                        <a class="dropdown-item" href="/menu/editBarangKeluarForm/{{$barangKeluar->barang_keluar_id}}">Edit</a>
                                     </div>
                                 </div>
                             </td>

@@ -36,7 +36,7 @@
                 <div class="col-lg-6">
                   <div class="form-group {{ $errors->has('fullname') ? ' has-error' : '' }}">
                     <label class="form-control-label" for="input-email">Full Name</label>
-                    <input type="text" id="input-fullname" class="form-control form-control-alternative" placeholder="Fullname..."  name="fullname">
+                    <input type="text" autocomplete="off" id="input-fullname" class="form-control form-control-alternative" placeholder="Fullname..."  name="fullname">
                 </div>
                   @if ($errors->has('fullname'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
@@ -49,7 +49,7 @@
                 <div class="col-lg-6">
                   <div class="form-group {{ $errors->has('username') ? ' has-error' : '' }}">
                     <label class="form-control-label" for="input-username">Username</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username..." name="username">
+                    <input type="text" autocomplete="off" id="input-username" class="form-control form-control-alternative" placeholder="Username..." name="username">
                   </div>
                   @if ($errors->has('username'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">

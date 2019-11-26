@@ -1,8 +1,8 @@
 @extends('master.master')
 
-@section('page-title', 'Form Tambah Barang Keluar')
+@section('page-title', 'Form Peminjaman Barang')
 
-@section('title','Tambah Barang Keluar')
+@section('title','Tambah Peminjaman Barang')
 
 @section('script')
 @endsection
@@ -21,16 +21,11 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header bg-transparent">
-          <h3 class="mb-0 text-center">FORM TAMBAH BARANG KELUAR</h3>
+          <h3 class="mb-0 text-center">FORM PEMINJAMAN BARANG</h3>
         </div>
         <div class="card-body">
-          <form action="/proses/addBarangKeluarProcess" method="post">
+          <form action="/proses/addPeminjamanBarangProcess" method="post">
             {{csrf_field()}}
-            @if (session('status'))
-              <div class="alert alert-danger">
-                {{ session('status') }}
-              </div>
-            @endif
             <div class="pl-lg-4">
               <div class="row">
                 <div class="col-lg-6">
@@ -52,39 +47,26 @@
               </div>
               <div class="row">
                 <div class="col-lg-6">
-                  <div class="form-group {{ $errors->has('jml_keluar') ? ' has-error' : '' }}">
-                    <label class="form-control-label" for="input-username">Jumlah Keluar</label>
-                    <input type="number" min="1" autocomplete="off" id="input-username" class="form-control form-control-alternative" placeholder="Jumlah Keluar..." name="jml_keluar">
+                  <div class="form-group {{ $errors->has('jml_barang') ? ' has-error' : '' }}">
+                    <label class="form-control-label" for="input-username">Jumlah Barang</label>
+                    <input type="number" min="1" autocomplete="off" id="input-username" class="form-control form-control-alternative" placeholder="Jumlah Barang..." name="jml_barang">
                   </div>
-                  @if ($errors->has('jml_keluar'))
+                  @if ($errors->has('jml_barang'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
-                                        <strong>{{ $errors->first('jml_keluar') }}</strong>
+                                        <strong>{{ $errors->first('jml_barang') }}</strong>
                                     </span>
                   @endif
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-6">
-                  <div class="form-group {{ $errors->has('lokasi') ? ' has-error' : '' }}">
-                    <label class="form-control-label" for="input-username">Lokasi</label>
-                    <input type="text"  autocomplete="off" id="input-username" class="form-control form-control-alternative" placeholder="Lokasi..." name="lokasi">
+                  <div class="form-group {{ $errors->has('tgl_kembali') ? ' has-error' : '' }}">
+                    <label class="form-control-label" for="input-username">Tanggal Kembali</label>
+                    <input type="date" class="form-control form-control-alternative" name="tgl_kembali">
                   </div>
-                  @if ($errors->has('lokasi'))
+                  @if ($errors->has('tgl_kembali'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
-                                        <strong>{{ $errors->first('lokasi') }}</strong>
-                                    </span>
-                  @endif
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group {{ $errors->has('penerima') ? ' has-error' : '' }}">
-                    <label class="form-control-label" for="input-username">Penerima</label>
-                    <input type="text"  autocomplete="off" id="input-username" class="form-control form-control-alternative" placeholder="Penerima..." name="penerima">
-                  </div>
-                  @if ($errors->has('penerima'))
-                    <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
-                                        <strong>{{ $errors->first('penerima') }}</strong>
+                                        <strong>{{ $errors->first('tgl_kembali') }}</strong>
                                     </span>
                   @endif
                 </div>

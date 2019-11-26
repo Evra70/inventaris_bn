@@ -79,7 +79,7 @@
                         <form method="post" action="/proses_registrasi">
                             {{csrf_field()}}
                             @if (session('status'))
-                                <div class="alert alert-{{ session('proses') }}">
+                                <div class="alert alert-info">
                                     {{ session('status') }}
                                 </div>
                             @endif

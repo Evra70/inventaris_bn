@@ -55,7 +55,7 @@
                     <div class="card-header bg-transparent pb-5">
                     <div class="card-body px-lg-5 py-lg-5">
                         <form method="POST" action="/proses_login">
-                            {{ csrf_field() }}
+                            {{ csrf_field()}}
                             @if (session('status'))
                                 <div class="alert alert-{{ session('proses') }}">
                                     {{ session('status') }}
@@ -99,13 +99,11 @@
                         </form>
                     </div>
                 </div>
-                @if(count($asAdmin) == 0)
                 <div class="row mt-3">
                     <div class="col-12 " style="margin-bottom: 15px;text-align: center;">
                         <a href="/registrasi">Create new account</a>
                     </div>
                 </div>
-                @endif
             </div>
         </div>
     </div>

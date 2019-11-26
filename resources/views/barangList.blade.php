@@ -54,6 +54,7 @@
                             <th scope="col">Sumber Dana</th>
                             <th scope="col">Total Masuk</th>
                             <th scope="col">Total Keluar</th>
+                            <th scope="col">Total Pinjam</th>
                             <th scope="col">Total Barang</th>
                             <th scope="col"></th>
                         </tr>
@@ -70,6 +71,7 @@
                             <td>{{$barang->sumber_dana}}</td>
                             <td>{{$barang->jml_masuk}}</td>
                             <td>{{$barang->jml_keluar}}</td>
+                            <td>{{$barang->jml_pinjam}}</td>
                             <td>{{$barang->total_barang}}</td>
                             <td class="text-right">
                                 <div class="dropdown">

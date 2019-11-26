@@ -11,8 +11,7 @@ class LoginController extends Controller
 {
 
     public function index(){
-        $adminCheck = DB::select("SELECT 1 FROM t_user");
-        return view("auth.login",['asAdmin' => $adminCheck]);
+        return view("auth.login");
     }
     public function masuk(Request $request){
         $this->validate($request,[

@@ -62,11 +62,17 @@ Route::get('/barangMasuk/{barang_masuk_id}/delete','BarangMasukController@delete
 // barang keluar
 Route::get('/menu/barangKeluarList','BarangKeluarController@getBarangKeluarList')->middleware('auth:administrator');
 Route::get('/menu/addBarangKeluarForm','BarangKeluarController@addBarangKeluarForm')->middleware('auth:administrator');
-//Route::get('/menu/editBarangMasukForm/{barang_masuk_id}','BarangMasukController@editBarangMasukForm')->middleware('auth:administrator');
-//Route::post('/search/barangMasukList','BarangMasukController@getBarangMasukListSearch')->middleware('auth:administrator');
+Route::get('/menu/editBarangKeluarForm/{barang_keluar_id}','BarangKeluarController@editBarangKeluarForm')->middleware('auth:administrator');
+Route::post('/search/barangKeluarList','BarangKeluarController@getBarangKeluarListSearch')->middleware('auth:administrator');
 Route::post('/proses/addBarangKeluarProcess','BarangKeluarController@addBarangKeluarProcess')->middleware('auth:administrator');
-//Route::post('/proses/editBarangMasukProcess','BarangMasukController@editBarangMasukProcess')->middleware('auth:administrator');
-//Route::get('/barangMasuk/{barang_masuk_id}/delete','BarangMasukController@deleteBarangMasuk')->middleware('auth:administrator');
+Route::post('/proses/editBarangKeluarProcess','BarangKeluarController@editBarangKeluarProcess')->middleware('auth:administrator');
+Route::get('/barangKeluar/{barang_keluar_id}/delete','BarangKeluarController@deleteBarangKeluar')->middleware('auth:administrator');
+
+// pinjam barang
+Route::get('/menu/addPeminjamanBarangForm','PeminjamanBarangController@addPeminjamanBarangForm')->middleware('auth:administrator');
+Route::post('/proses/addPeminjamanBarangProcess','PeminjamanBarangController@addPeminjamanBarangProcess')->middleware('auth:administrator');
+
+
 
 Route::post('/proses_login', 'LoginController@masuk');
 Route::get('/proses_logout', 'LoginController@keluar');

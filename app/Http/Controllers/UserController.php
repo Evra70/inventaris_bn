@@ -48,7 +48,7 @@ class UserController extends Controller
     public function addUserProcess(Request $request)
     {
         $this->validate($request,[
-            'fullname' => 'required|min:7|max:50',
+            'fullname' => 'required|min:4|max:50',
             'username' => 'required|min:5|max:20',
             'level'    => 'required',
             'password' => 'required|min:6'
@@ -72,7 +72,7 @@ class UserController extends Controller
     public function editUserProcess(Request $request)
     {
         $this->validate($request,[
-            'fullname' => 'required|min:7|max:50',
+            'fullname' => 'required|min:4|max:50',
             'username' => 'required|min:5|max:20',
             'level'    => 'required',
             'password' => 'required|min:6'
