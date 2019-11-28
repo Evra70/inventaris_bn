@@ -154,23 +154,23 @@
             <h6 class="navbar-heading text-muted">Generate Laporan</h6>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="menu/profile">
+                    <a class="nav-link" href="/menu/reportBarangList">
+                        <i class="ni ni-single-copy-04 text-blue"></i> Laporan Daftar Barang
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/menu/reportBarangMasukList">
                         <i class="ni ni-cart text-blue"></i> Laporan Barang Masuk
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="menu/tables">
+                    <a class="nav-link" href="/menu/reportBarangKeluarList">
                         <i class="ni ni-curved-next text-blue"></i> Laporan Barang Keluar
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="menu/login">
+                    <a class="nav-link" href="/menu/reportPeminjamanBarangList">
                         <i class="ni ni-ruler-pencil text-blue"></i> Laporan Peminjaman Barang
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="menu/register">
-                        <i class="ni ni-single-copy-04 text-blue"></i> Laporan Daftar Barang
                     </a>
                 </li>
             </ul>

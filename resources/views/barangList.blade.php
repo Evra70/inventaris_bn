@@ -40,7 +40,7 @@
         <div class="col">
             <div class="card shadow">
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Table Barang <a href="/menu/addBarangForm" class="btn btn-success" style="float: right;">+ Tambah</a></h3>
+                    <h3 class="mb-0">Table Barang @if(Auth::guard('administrator')->check()) <a href="/menu/addBarangForm" class="btn btn-success" style="float: right;">+ Tambah</a> @endif</h3>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-items-center table-flush">
@@ -73,6 +73,7 @@
                             <td>{{$barang->jml_keluar}}</td>
                             <td>{{$barang->jml_pinjam}}</td>
                             <td>{{$barang->total_barang}}</td>
+                            @if(Auth::guard('administrator')->check())
                             <td class="text-right">
                                 <div class="dropdown">
                                     <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -84,6 +85,7 @@
                                     </div>
                                 </div>
                             </td>
+                            @endif
                         </tr>
                         @endforeach
                         </tbody>

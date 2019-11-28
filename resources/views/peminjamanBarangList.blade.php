@@ -1,8 +1,8 @@
 @extends('master.master')
 
-@section('page-title', 'Daftar Barang Keluar')
+@section('page-title', 'Daftar PeminjamanBarang')
 
-@section('title','Daftar Barang Keluar')
+@section('title','Daftar PeminjamanBarang')
 
 @section('script')
 @endsection
@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <div class="header-body" style="margin-bottom: -60px;">
                 <!-- Card stats -->
-                <form action="/search/barangKeluarList" method="post">
+                <form action="/search/peminjamanBarangList" method="post">
                     {{csrf_field()}}
                 <div class="row">
 
@@ -40,43 +40,47 @@
         <div class="col">
             <div class="card shadow">
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Table Barang Keluar
-                        @if(Auth::guard('administrator')->check())
-                            <a href="/menu/addBarangKeluarForm" class="btn btn-success" style="float: right;">+ Tambah</a></h3>
-                        @endif
+                    <h3 class="mb-0">Table PeminjamanBarang </h3>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                         <tr>
                             <th scope="col">No</th>
+                            <th scope="col">Nama Peminjam</th>
                             <th scope="col">Nama Barang</th>
-                            <th scope="col">Tanggal Keluar</th>
-                            <th scope="col">Jumlah Keluar</th>
-                            <th scope="col">Lokasi</th>
-                            <th scope="col">Penerima</th>
+                            <th scope="col">Tanggal Pinjam</th>
+                            <th scope="col">Jumlah Pinjam</th>
+                            <th scope="col">Tanggal Kembali</th>
+                            <th scope="col">Status</th>
                             <th scope="col"></th>
                         </tr>
                         </thead>
                         <tbody>
                         @php $no=1; @endphp
-                        @foreach($barangKeluarList as $barangKeluar)
+                        @foreach($peminjamanBarangList as $peminjamanBarang)
                         <tr>
                             <th scope="row">{{$no++}}</th>
-                            <td>{{$barangKeluar->nama_barang}}</td>
-                            <td>{{Date('d-m-Y',strtotime($barangKeluar->tgl_keluar))}}</td>
-                            <td>{{$barangKeluar->jml_keluar}}</td>
-                            <td>{{$barangKeluar->lokasi}}</td>
-                            <td>{{$barangKeluar->penerima}}</td>
-                            @if(Auth::guard('administrator')->check())
+                            <td>{{$peminjamanBarang->fullname}}</td>
+                            <td>{{$peminjamanBarang->nama_barang}}</td>
+                            <td>{{Date('d-m-Y',strtotime($peminjamanBarang->tgl_pinjam))}}</td>
+                            <td>{{$peminjamanBarang->jml_barang}}</td>
+                            <td>{{Date('d-m-Y',strtotime($peminjamanBarang->tgl_kembali))}}</td>
+                            @if($peminjamanBarang->kondisi == 'N')
+                                <td ><label class="btn btn-warning">Belum Kembali</label></td>
+                            @else
+                                <td ><label class="btn btn-success">Sudah Kembali</label></td>
+                            @endif
+                            @if($peminjamanBarang->kondisi == 'N' && Auth::guard('administrator')->check())
                             <td class="text-right">
                                 <div class="dropdown">
                                     <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-v"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" href="/barangKeluar/{{$barangKeluar->barang_keluar_id}}/delete">Delete</a>
-                                        <a class="dropdown-item" href="/menu/editBarangKeluarForm/{{$barangKeluar->barang_keluar_id}}">Edit</a>
+                                        <a class="dropdown-item" href="/peminjamanBarang/{{$peminjamanBarang->pinjam_id}}/cancel">Batalkan</a>
+                                        <a class="dropdown-item" href="/peminjamanBarang/{{$peminjamanBarang->pinjam_id}}/kembali">Kembalikan</a>
+                                        <a class="dropdown-item" href="/menu/editPeminjamanBarangForm/{{$peminjamanBarang->pinjam_id}}">Edit</a>
                                     </div>
                                 </div>
                             </td>
