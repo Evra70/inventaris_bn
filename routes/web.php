@@ -67,14 +67,14 @@ Route::post('/proses/editBarangKeluarProcess','BarangKeluarController@editBarang
 Route::get('/barangKeluar/{barang_keluar_id}/delete','BarangKeluarController@deleteBarangKeluar')->middleware('auth:administrator');
 
 // pinjam barang
-Route::get('/menu/addPeminjamanBarangForm','PeminjamanBarangController@addPeminjamanBarangForm')->middleware('auth:administrator');
-Route::post('/proses/addPeminjamanBarangProcess','PeminjamanBarangController@addPeminjamanBarangProcess')->middleware('auth:administrator');
-Route::get('/menu/peminjamanBarangList','PeminjamanBarangController@getPeminjamanBarangList')->middleware('auth:administrator');
-Route::get('/menu/editPeminjamanBarangForm/{pinjam_id}','PeminjamanBarangController@editpeminjamanBarangForm')->middleware('auth:administrator');
-Route::post('/proses/editPeminjamanBarangProcess','PeminjamanBarangController@editPeminjamanBarangProcess')->middleware('auth:administrator');
-Route::get('/peminjamanBarang/{pinjam_id}/cancel','PeminjamanBarangController@cancelPeminjamanBarang')->middleware('auth:administrator');
-Route::get('/peminjamanBarang/{pinjam_id}/kembali','PeminjamanBarangController@pengembalianBarang')->middleware('auth:administrator');
-Route::post('/search/peminjamanBarangList','PeminjamanBarangController@getPeminjamanBarangListSearch')->middleware('auth:administrator');
+Route::get('/menu/addPeminjamanBarangForm','PeminjamanBarangController@addPeminjamanBarangForm')->middleware('auth:administrator,peminjam');
+Route::post('/proses/addPeminjamanBarangProcess','PeminjamanBarangController@addPeminjamanBarangProcess')->middleware('auth:administrator,peminjam');
+Route::get('/menu/peminjamanBarangList','PeminjamanBarangController@getPeminjamanBarangList')->middleware('auth:administrator,peminjam');
+Route::get('/menu/editPeminjamanBarangForm/{pinjam_id}','PeminjamanBarangController@editpeminjamanBarangForm')->middleware('auth:administrator,peminjam');
+Route::post('/proses/editPeminjamanBarangProcess','PeminjamanBarangController@editPeminjamanBarangProcess')->middleware('auth:administrator,peminjam');
+Route::get('/peminjamanBarang/{pinjam_id}/cancel','PeminjamanBarangController@cancelPeminjamanBarang')->middleware('auth:administrator,peminjam');
+Route::get('/peminjamanBarang/{pinjam_id}/kembali','PeminjamanBarangController@pengembalianBarang')->middleware('auth:administrator,peminjam');
+Route::post('/search/peminjamanBarangList','PeminjamanBarangController@getPeminjamanBarangListSearch')->middleware('auth:administrator,peminjam');
 
 
 //Report

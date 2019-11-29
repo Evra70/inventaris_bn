@@ -1,8 +1,8 @@
 @extends('master.master')
 
-@section('page-title', 'Form Tambah User')
+@section('page-title', 'Form Tambah Suplier')
 
-@section('title','Tambah User')
+@section('title','Tambah Suplier')
 
 @section('script')
 @endsection
@@ -21,7 +21,7 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header bg-transparent">
-          <h3 class="mb-0 text-center">FORM TAMBAH USER</h3>
+          <h3 class="mb-0 text-center">FORM TAMBAH SUPLIER</h3>
         </div>
         <div class="card-body">
           <form action="/proses/addSuplierProcess" method="post">

@@ -89,12 +89,11 @@ class PeminjamanBarangController extends Controller
         $this->validate($request,[
             'barang_id'      => 'required',
             'jml_barang'    => 'required|numeric|min:1',
-            'tgl_kembali'    => 'required',
         ]);
 
         $barang = Barang::find($request->barang_id);
         $datastok = Stok::find($request->barang_id);
-        $tglKembali = Date('Ymd',strtotime($request->tgl_kembali));
+        $tglKembali = Date('Ymd',strtotime("+1 week"));
         if($datastok["total_barang"] < $request->jml_barang){
             return redirect()->back()->with('status','Stok Barang Tidak Cukup !!!');
         }else{

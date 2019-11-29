@@ -7,14 +7,14 @@
 @section('isi')
     <table class='table table-bordered' style="border-collapse: collapse;" width="100%">
         <thead>
-        <tr>
-            <th scope="col">No</th>
-            <th scope="col">Nama Peminjam</th>
-            <th scope="col">Nama Barang</th>
-            <th scope="col">Tanggal Pinjam</th>
-            <th scope="col">Jumlah Pinjam</th>
-            <th scope="col">Tanggal Kembali</th>
-            <th scope="col">Status</th>
+        <tr align="center">
+            <th scope="col" class="bor">No</th>
+            <th scope="col" class="bor">Nama Peminjam</th>
+            <th scope="col" class="bor">Nama Barang</th>
+            <th scope="col" class="bor">Tanggal Pinjam</th>
+            <th scope="col" class="bor">Jumlah Pinjam</th>
+            <th scope="col" class="bor">Tanggal Kembali</th>
+            <th scope="col" class="bor">Status</th>
         </tr>
         </thead>
         <tbody>

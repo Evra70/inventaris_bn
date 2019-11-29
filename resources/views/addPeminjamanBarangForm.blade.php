@@ -63,19 +63,6 @@
                   @endif
                 </div>
               </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group {{ $errors->has('tgl_kembali') ? ' has-error' : '' }}">
-                    <label class="form-control-label" for="input-username">Tanggal Kembali</label>
-                    <input type="date" class="form-control form-control-alternative" name="tgl_kembali">
-                  </div>
-                  @if ($errors->has('tgl_kembali'))
-                    <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
-                                        <strong>{{ $errors->first('tgl_kembali') }}</strong>
-                                    </span>
-                  @endif
-                </div>
-              </div>
               <hr class="my-4" />
               <div class="row">
                 <div class="col-lg-6">
