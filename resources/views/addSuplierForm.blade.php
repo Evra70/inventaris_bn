@@ -31,7 +31,7 @@
                 <div class="col-lg-6">
                   <div class="form-group {{ $errors->has('nama_suplier') ? ' has-error' : '' }}">
                     <label class="form-control-label" for="input-email">Nama Suplier</label>
-                    <input type="text" id="input-fullname" class="form-control form-control-alternative" placeholder="Nama Suplier..."  name="nama_suplier">
+                    <input type="text" id="input-fullname" autocomplete="off" class="form-control form-control-alternative" placeholder="Nama Suplier..."  name="nama_suplier">
                 </div>
                   @if ($errors->has('nama_suplier'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
@@ -44,7 +44,7 @@
                 <div class="col-lg-6">
                   <div class="form-group {{ $errors->has('alamat_suplier') ? ' has-error' : '' }}">
                     <label class="form-control-label" for="input-username">Alamat Suplier</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Alamat..." name="alamat_suplier">
+                    <input type="text" id="input-username" autocomplete="off" class="form-control form-control-alternative" placeholder="Alamat..." name="alamat_suplier">
                   </div>
                   @if ($errors->has('alamat_suplier'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
@@ -57,7 +57,7 @@
                 <div class="col-lg-6">
                   <div class="form-group {{ $errors->has('telp_suplier') ? ' has-error' : '' }}">
                     <label class="form-control-label" for="input-username">No Telp.</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Telp..." name="telp_suplier">
+                    <input type="text" id="input-username" autocomplete="off" class="form-control form-control-alternative" placeholder="Telp..." name="telp_suplier">
                   </div>
                   @if ($errors->has('telp_suplier'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
