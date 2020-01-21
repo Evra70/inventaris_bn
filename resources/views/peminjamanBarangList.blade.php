@@ -65,7 +65,11 @@
                             <td>{{$peminjamanBarang->nama_barang}}</td>
                             <td>{{Date('d-m-Y',strtotime($peminjamanBarang->tgl_pinjam))}}</td>
                             <td>{{$peminjamanBarang->jml_barang}}</td>
-                            <td>{{Date('d-m-Y',strtotime($peminjamanBarang->tgl_kembali))}}</td>
+                            @if($peminjamanBarang->tgl_kembali == '00000000')
+                                <td>--NONE--</td>
+                            @else
+                                <td>{{Date('d-m-Y',strtotime($peminjamanBarang->tgl_kembali))}}</td>
+                            @endif
                             @if($peminjamanBarang->kondisi == 'N')
                                 <td ><label class="btn btn-warning">Belum Kembali</label></td>
                             @else

@@ -32,6 +32,7 @@ class PeminjamanBarangController extends Controller
         $stok->save();
 
         $pinjamBarang->kondisi = 'Y';
+        $pinjamBarang->tgl_kembali = Date('Ymd');
         $pinjamBarang->save();
         return redirect('/menu/peminjamanBarangList');
     }
@@ -93,7 +94,8 @@ class PeminjamanBarangController extends Controller
 
         $barang = Barang::find($request->barang_id);
         $datastok = Stok::find($request->barang_id);
-        $tglKembali = Date('Ymd',strtotime("+1 week"));
+//        $tglKembali = Date('Ymd',strtotime("+1 week"));
+        $tglKembali = "00000000";
         if($datastok["total_barang"] < $request->jml_barang){
             return redirect()->back()->with('status','Stok Barang Tidak Cukup !!!');
         }else{
