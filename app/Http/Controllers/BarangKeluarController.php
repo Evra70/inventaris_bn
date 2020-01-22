@@ -57,10 +57,11 @@ class BarangKeluarController extends Controller
     public function getBarangKeluarListSearch(Request $request)
     {
         $key=$request->keyword;
-        $barangKeluarList = DB::select("SELECT A.* FROM t_barang_keluar
-                        WHERE UPPER(nama_barang) LIKE UPPER('%".$key."%') OR 
-                        WHERE UPPER(lokasi) LIKE UPPER('%".$key."%') OR 
-                        UPPER(penerima) LIKE UPPER('%".$key."%')");
+        $barangKeluarList = DB::select("SELECT A.*,B.* FROM t_barang_keluar A
+                        INNER JOIN t_barang B ON A.barang_id = B.barang_id
+                        WHERE UPPER(B.nama_barang) LIKE UPPER('%".$key."%') OR 
+                        php aUPPER(A.lokasi) LIKE UPPER('%".$key."%') OR 
+                        UPPER(A.penerima) LIKE UPPER('%".$key."%')");
         return view('barangKeluarList',['barangKeluarList' => $barangKeluarList]);
     }
 

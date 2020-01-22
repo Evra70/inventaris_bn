@@ -62,7 +62,7 @@ class BarangController extends Controller
             'spesifikasi'    => 'required|min:3|max:30',
             'lokasi'    => 'required|min:5|max:30',
             'kondisi'    => 'required|min:5|max:30',
-            'sumber_dana'      => 'required|min:5|max:20',
+            'sumber_dana'      => 'required|min:3|max:20',
             'jumlah_barang'      => 'required|numeric',
         ]);
 
@@ -92,8 +92,8 @@ class BarangController extends Controller
             'nama_barang'      => 'required|min:3|max:50',
             'spesifikasi'    => 'required|min:3|max:30',
             'lokasi'    => 'required|min:5|max:30',
-            'kondisi'    => 'required|min:5|max:30',
-            'sumber_dana'      => 'required|min:5|max:20',
+            'kondisi'    => 'required|min:4|max:30',
+            'sumber_dana'      => 'required|min:3|max:20',
             'jumlah_barang'      => 'required|numeric',
             'jumlah_masuk'      => 'required|numeric',
             'jumlah_keluar'      => 'required|numeric',

@@ -55,7 +55,7 @@
                             <th scope="col">Total Masuk</th>
                             <th scope="col">Total Keluar</th>
                             <th scope="col">Total Pinjam</th>
-                            <th scope="col">Total Barang</th>
+                            <th scope="col">Jumlah Barang</th>
                             <th scope="col"></th>
                         </tr>
                         </thead>
@@ -80,7 +80,7 @@
                                         <i class="fas fa-ellipsis-v"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" href="/barang/{{$barang->barang_id}}/delete">Delete</a>
+                                        <a class="dropdown-item" onclick="confirm('Apakah Yakin Ingin Menghapus Data ?');" href="/barang/{{$barang->barang_id}}/delete">Delete</a>
                                         <a class="dropdown-item" href="/menu/editBarangForm/{{$barang->barang_id}}">Edit</a>
                                     </div>
                                 </div>

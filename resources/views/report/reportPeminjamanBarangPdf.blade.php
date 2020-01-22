@@ -34,6 +34,11 @@
                 @endif
         @endforeach
         </tbody>
+        <tfoot>
+        <tr>
+            <th  align="center" class="bor" colspan="5">Total Data</th>
+            <th  align="center" class="bor" colspan="2">{{count($peminjamanBarangList)}}</th>
+        </tr>
+        </tfoot>
     </table>
-    <label>Total Barang : {{count($peminjamanBarangList)}}</label>
 @endsection

@@ -46,10 +46,9 @@
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                         <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Nama Peminjam</th>
-                            <th scope="col">Nama Barang</th>
                             <th scope="col">Tanggal Pinjam</th>
+                            <th scope="col">Nama Barang</th>
+                            <th scope="col">Nama Peminjam</th>
                             <th scope="col">Jumlah Pinjam</th>
                             <th scope="col">Tanggal Kembali</th>
                             <th scope="col">Status</th>
@@ -57,13 +56,11 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @php $no=1; @endphp
                         @foreach($peminjamanBarangList as $peminjamanBarang)
                         <tr>
-                            <th scope="row">{{$no++}}</th>
-                            <td>{{$peminjamanBarang->fullname}}</td>
-                            <td>{{$peminjamanBarang->nama_barang}}</td>
                             <td>{{Date('d-m-Y',strtotime($peminjamanBarang->tgl_pinjam))}}</td>
+                            <td>{{$peminjamanBarang->nama_barang}}</td>
+                            <td>{{$peminjamanBarang->fullname}}</td>
                             <td>{{$peminjamanBarang->jml_barang}}</td>
                             @if($peminjamanBarang->tgl_kembali == '00000000')
                                 <td>--NONE--</td>
@@ -82,8 +79,8 @@
                                         <i class="fas fa-ellipsis-v"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" href="/peminjamanBarang/{{$peminjamanBarang->pinjam_id}}/cancel">Batalkan</a>
-                                        <a class="dropdown-item" href="/peminjamanBarang/{{$peminjamanBarang->pinjam_id}}/kembali">Kembalikan</a>
+                                        <a class="dropdown-item" onclick="confirm('Apakah Yakin Ingin Membatalkan Peminjaman ?');" href="/peminjamanBarang/{{$peminjamanBarang->pinjam_id}}/cancel">Batalkan</a>
+                                        <a class="dropdown-item" onclick="confirm('Apakah Yakin Ingin Mengembalikan Barang ?');" href="/peminjamanBarang/{{$peminjamanBarang->pinjam_id}}/kembali">Kembalikan</a>
                                         <a class="dropdown-item" href="/menu/editPeminjamanBarangForm/{{$peminjamanBarang->pinjam_id}}">Edit</a>
                                     </div>
                                 </div>

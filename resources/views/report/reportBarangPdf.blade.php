@@ -21,22 +21,29 @@
         </tr>
         </thead>
         <tbody>
-        @php $i=1 @endphp
+        @php $i=1; @endphp
         @foreach($barangList as $barang)
             <tr scope="row">
-                <td align="center" class="bor">{{ $i++ }}</td>
-                <td align="center" class="bor">{{$barang->nama_barang}}</td>
-                <td align="center" class="bor">{{$barang->spesifikasi}}</td>
-                <td align="center" class="bor">{{$barang->lokasi}}</td>
-                <td align="center" class="bor">{{$barang->kondisi}}</td>
-                <td align="center" class="bor">{{$barang->sumber_dana}}</td>
-                <td align="center" class="bor">{{$barang->jml_masuk}}</td>
-                <td align="center" class="bor">{{$barang->jml_keluar}}</td>
-                <td align="center" class="bor">{{$barang->jml_pinjam}}</td>
-                <td align="center" class="bor">{{$barang->total_barang}}</td>
+                <th align="center" class="bor">{{ $i++ }}</th>
+                <th align="center" class="bor">{{$barang->nama_barang}}</th>
+                <th align="center" class="bor">{{$barang->spesifikasi}}</th>
+                <th align="center" class="bor">{{$barang->lokasi}}</th>
+                <th align="center" class="bor">{{$barang->kondisi}}</th>
+                <th align="center" class="bor">{{$barang->sumber_dana}}</th>
+                <th align="center" class="bor">{{$barang->jml_masuk}}</th>
+                <th align="center" class="bor">{{$barang->jml_keluar}}</th>
+                <th align="center" class="bor">{{$barang->jml_pinjam}}</th>
+                <th align="center" class="bor">{{$barang->total_barang}}</th>
             </tr>
         @endforeach
         </tbody>
+        <tfoot>
+            <tr>
+                <th  align="center" class="bor" colspan="8">Total Data</th>
+                <th  align="center" class="bor" colspan="2">{{count($barangList)}}</th>
+            </tr>
+        </tfoot>
     </table>
-    <label>Total Data : {{count($barangList)}}</label>
+
+
 @endsection

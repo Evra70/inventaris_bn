@@ -31,7 +31,7 @@
                 <div class="col-lg-6">
                   <div class="form-group {{ $errors->has('nama_barang') ? ' has-error' : '' }}">
                     <label class="form-control-label" for="input-email">Nama Barang</label>
-                    <input type="text" id="input-fullname" class="form-control form-control-alternative" placeholder="Nama Barang..."  name="nama_barang">
+                    <input type="text" id="input-fullname" autocomplete="off" class="form-control form-control-alternative" placeholder="Nama Barang..."  name="nama_barang">
                 </div>
                   @if ($errors->has('nama_barang'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
@@ -44,7 +44,7 @@
                 <div class="col-lg-6">
                   <div class="form-group {{ $errors->has('spesifikasi') ? ' has-error' : '' }}">
                     <label class="form-control-label" for="input-username">Spesifikasi</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Spesifikasi..." name="spesifikasi">
+                    <input type="text" id="input-username" autocomplete="off" class="form-control form-control-alternative" placeholder="Spesifikasi..." name="spesifikasi">
                   </div>
                   @if ($errors->has('spesifikasi'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
@@ -57,7 +57,7 @@
                 <div class="col-lg-6">
                   <div class="form-group {{ $errors->has('lokasi') ? ' has-error' : '' }}">
                     <label class="form-control-label" for="input-username">Lokasi</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Lokasi..." name="lokasi">
+                    <input type="text" id="input-username" autocomplete="off" class="form-control form-control-alternative" placeholder="Lokasi..." name="lokasi">
                   </div>
                   @if ($errors->has('lokasi'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
@@ -70,7 +70,7 @@
                 <div class="col-lg-6">
                   <div class="form-group {{ $errors->has('kondisi') ? ' has-error' : '' }}">
                     <label class="form-control-label" for="input-username">Kondisi</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Kondisi..." name="kondisi">
+                    <input type="text" id="input-username" autocomplete="off" class="form-control form-control-alternative" placeholder="Kondisi..." name="kondisi">
                   </div>
                   @if ($errors->has('kondisi'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
@@ -83,7 +83,7 @@
                 <div class="col-lg-6">
                   <div class="form-group {{ $errors->has('sumber_dana') ? ' has-error' : '' }}">
                     <label class="form-control-label" for="input-username">Sumber Dana</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Sumber Dana..." name="sumber_dana">
+                    <input type="text" id="input-username" autocomplete="off" class="form-control form-control-alternative" placeholder="Sumber Dana..." name="sumber_dana">
                   </div>
                   @if ($errors->has('sumber_dana'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">
@@ -96,7 +96,7 @@
                 <div class="col-lg-6">
                   <div class="form-group {{ $errors->has('jumlah_barang') ? ' has-error' : '' }}">
                     <label class="form-control-label" for="input-username">Jumlah Barang</label>
-                    <input type="number" min="0" id="input-username" class="form-control form-control-alternative" placeholder="Jumlah Barang..." name="jumlah_barang">
+                    <input type="number" min="0" id="input-username" autocomplete="off" class="form-control form-control-alternative" placeholder="Jumlah Barang..." name="jumlah_barang">
                   </div>
                   @if ($errors->has('jumlah_barang'))
                     <span class="help-block" style="color:red;margin-bottom: 5px;margin-top: -10px;">

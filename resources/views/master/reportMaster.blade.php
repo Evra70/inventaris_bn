@@ -12,6 +12,7 @@
     }
     .bor{
         border: 1px solid black;
+
     }
 </style>
 <center>
@@ -23,5 +24,6 @@
     <label>Tanggal : {{Date('d-m-Y')}}</label>
 </h5>
 @yield('isi')
+
 </body>
 </html>
