@@ -67,7 +67,7 @@
                                         <i class="fas fa-ellipsis-v"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" onclick="confirm('Apakah Yakin Ingin Menghapus Data ?');" href="/user/{{$user->user_id}}/delete">Delete</a>
+                                        <a class="dropdown-item" href="/user/{{$user->user_id}}/delete">Delete</a>
                                         <a class="dropdown-item" href="/menu/editUserForm/{{$user->user_id}}">Edit</a>
                                     </div>
                                 </div>

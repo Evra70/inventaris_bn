@@ -79,8 +79,8 @@
                                         <i class="fas fa-ellipsis-v"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" onclick="confirm('Apakah Yakin Ingin Membatalkan Peminjaman ?');" href="/peminjamanBarang/{{$peminjamanBarang->pinjam_id}}/cancel">Batalkan</a>
-                                        <a class="dropdown-item" onclick="confirm('Apakah Yakin Ingin Mengembalikan Barang ?');" href="/peminjamanBarang/{{$peminjamanBarang->pinjam_id}}/kembali">Kembalikan</a>
+                                        <a class="dropdown-item"  href="/peminjamanBarang/{{$peminjamanBarang->pinjam_id}}/cancel">Batalkan</a>
+                                        <a class="dropdown-item" href="/peminjamanBarang/{{$peminjamanBarang->pinjam_id}}/kembali">Kembalikan</a>
                                         <a class="dropdown-item" href="/menu/editPeminjamanBarangForm/{{$peminjamanBarang->pinjam_id}}">Edit</a>
                                     </div>
                                 </div>
