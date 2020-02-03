@@ -31,10 +31,18 @@ class PeminjamanBarangController extends Controller
         $stok->total_barang += $pinjamBarang->jml_barang;
         $stok->save();
 
+        $batasKembali = date_create(Date('Y-m-d',strtotime($pinjamBarang->batas_kembali)));
+        $now =  date_create(Date('Y-m-d'));
+        $diff = date_diff($batasKembali,$now);
+        $sisaHari = $diff->d;
+
+
         $pinjamBarang->kondisi = 'Y';
         $pinjamBarang->tgl_kembali = Date('Ymd');
+        $pinjamBarang->status_kembali = $sisaHari;
         $pinjamBarang->save();
         return redirect('/menu/peminjamanBarangList');
+
     }
 
     public function cancelPeminjamanBarang($pinjamId){
@@ -94,7 +102,7 @@ class PeminjamanBarangController extends Controller
 
         $barang = Barang::find($request->barang_id);
         $datastok = Stok::find($request->barang_id);
-//        $tglKembali = Date('Ymd',strtotime("+1 week"));
+        $batasKembali = Date('Ymd',strtotime("+1 week"));
         $tglKembali = "00000000";
         if($datastok["total_barang"] < $request->jml_barang){
             return redirect()->back()->with('status','Stok Barang Tidak Cukup !!!');
@@ -105,7 +113,9 @@ class PeminjamanBarangController extends Controller
             $pinjamBarang->nama_barang  = $barang->nama_barang;
             $pinjamBarang->tgl_pinjam   = Date('Ymd');
             $pinjamBarang->jml_barang   = $request->jml_barang;
+            $pinjamBarang->batas_kembali  = $batasKembali;
             $pinjamBarang->tgl_kembali  = $tglKembali;
+            $pinjamBarang->status_kembali  = -1;
             $pinjamBarang->kondisi      = 'N';
             $pinjamBarang->save();
 

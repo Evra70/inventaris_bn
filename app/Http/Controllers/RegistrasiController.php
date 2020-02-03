@@ -17,34 +17,40 @@ class RegistrasiController extends Controller
         $this->validate($request,[
             'fullname' => 'required|min:7|max:50',
             'username' => 'required|min:5|max:20',
-            'password' => 'required|min:6'
+            'password' => 'required|min:6',
+            'confirm_password' => 'required|min:6',
         ]);
 
         $user = User::where('username',$request->username)->first();
         $userCheck = DB::select("SELECT 1 FROM t_user LIMIT 2");
-        if(isset($user)){
-            return redirect()->back()->with('status','Username Telah Terdaftar !!!');
-        }else{
-            if(count($userCheck) > 0){
-                $user = new User();
-                $user->fullname = $request->fullname;
-                $user->username = $request->username;
-                $user->level    = 'peminjam';
-                $user->password = md5($request->password);
-                $user->save();
-                Auth::guard("peminjam")->LoginUsingId($user['user_id']);
-                return redirect('/peminjam');
+        if($request->password == $request->confirm_password){
+            if(isset($user)){
+                return redirect()->back()->with('status','Username Telah Terdaftar !!!');
             }else{
-                $user = new User();
-                $user->fullname = $request->fullname;
-                $user->username = $request->username;
-                $user->level    = 'administrator';
-                $user->password = md5($request->password);
-                $user->save();
-                Auth::guard("administrator")->LoginUsingId($user['user_id']);
-                return redirect('/administrator');
+                if(count($userCheck) > 0){
+                    $user = new User();
+                    $user->fullname = $request->fullname;
+                    $user->username = $request->username;
+                    $user->level    = 'peminjam';
+                    $user->password = md5($request->password);
+                    $user->save();
+                    Auth::guard("peminjam")->LoginUsingId($user['user_id']);
+                    return redirect('/peminjam');
+                }else{
+                    $user = new User();
+                    $user->fullname = $request->fullname;
+                    $user->username = $request->username;
+                    $user->level    = 'administrator';
+                    $user->password = md5($request->password);
+                    $user->save();
+                    Auth::guard("administrator")->LoginUsingId($user['user_id']);
+                    return redirect('/administrator');
+                }
             }
+        }else{
+            return redirect()->back()->with('status','Password Tidak Sama !!!');
         }
+
     }
 
 }

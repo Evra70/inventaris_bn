@@ -5,40 +5,58 @@
 @section('action-title','Data Peminjaman Barang')
 
 @section('isi')
-    <table class='table table-bordered' style="border-collapse: collapse;" width="100%">
+    <table border="1">
         <thead>
         <tr align="center">
-            <th scope="col" class="bor">No</th>
-            <th scope="col" class="bor">Nama Peminjam</th>
-            <th scope="col" class="bor">Nama Barang</th>
-            <th scope="col" class="bor">Tanggal Pinjam</th>
-            <th scope="col" class="bor">Jumlah Pinjam</th>
-            <th scope="col" class="bor">Tanggal Kembali</th>
-            <th scope="col" class="bor">Status</th>
+            <th>No</th>
+            <th>Tanggal Pinjam</th>
+            <th>Nama Barang</th>
+            <th>Nama Peminjam</th>
+            <th>Jumlah Pinjam</th>
+            <th>Batas Kembali</th>
+            <th>Tanggal Kembali</th>
+            <th>Status</th>
+            <th>Keterangan</th>
         </tr>
         </thead>
         <tbody>
         @php $i=1 @endphp
             @foreach($peminjamanBarangList as $peminjamanBarang)
                 <tr>
-                    <th align="center" class="bor">{{$i++}}</th>
-                    <td align="center" class="bor">{{$peminjamanBarang->fullname}}</td>
-                    <td align="center" class="bor">{{$peminjamanBarang->nama_barang}}</td>
-                    <td align="center" class="bor">{{Date('d-m-Y',strtotime($peminjamanBarang->tgl_pinjam))}}</td>
-                    <td align="center" class="bor">{{$peminjamanBarang->jml_barang}}</td>
-                    <td align="center" class="bor">{{Date('d-m-Y',strtotime($peminjamanBarang->tgl_kembali))}}</td>
-                    @if($peminjamanBarang->kondisi == 'N')
-                        <td align="center" class="bor">Belum Kembali</td>
+                    <td>{{ $i++ }}</td>
+                    <td>{{Date('d-m-Y',strtotime($peminjamanBarang->tgl_pinjam))}}</td>
+                    <td>{{$peminjamanBarang->nama_barang}}</td>
+                    <td>{{$peminjamanBarang->fullname}}</td>
+                    <td>{{$peminjamanBarang->jml_barang}}</td>
+                    <td>{{Date('d-m-Y',strtotime($peminjamanBarang->batas_kembali))}}</td>
+
+                    @if($peminjamanBarang->tgl_kembali == '00000000')
+                        <td>--NONE--</td>
                     @else
-                        <td align="center" class="bor">Sudah Kembali</td>
-                @endif
-        @endforeach
+                        <td>{{Date('d-m-Y',strtotime($peminjamanBarang->tgl_kembali))}}</td>
+                    @endif
+
+                    @if($peminjamanBarang->kondisi == 'N')
+                        <td ><label>Belum Kembali</label></td>
+                    @else
+                        <td ><label>Sudah Kembali</label></td>
+                    @endif
+
+                    @if($peminjamanBarang->status_kembali == -1)
+                        <td>--NONE--</td>
+                    @elseif(Date('Y-m-d',strtotime($peminjamanBarang->tgl_kembali)) == Date('Y-m-d',strtotime($peminjamanBarang->batas_kembali)))
+                        <td>Tepat Waktu</td>
+                    @elseif(Date('Y-m-d',strtotime($peminjamanBarang->batas_kembali)) > Date('Y-m-d',strtotime($peminjamanBarang->tgl_kembali)))
+                        <td>Lebih Cepat {{$peminjamanBarang->status_kembali}} Hari</td>
+                    @elseif(Date('Y-m-d',strtotime($peminjamanBarang->batas_kembali)) < Date('Y-m-d',strtotime($peminjamanBarang->tgl_kembali)))
+                        <td>Terlambat {{$peminjamanBarang->status_kembali}} Hari</td>
+                    @endif
+                </tr>
+                @endforeach
+            <tr>
+                <td colspan="6" style="font-weight: bold;">TOTAL DATA</td>
+                <td class="total" colspan="3">{{count($peminjamanBarangList)}}</td>
+            </tr>
         </tbody>
-        <tfoot>
-        <tr>
-            <th  align="center" class="bor" colspan="5">Total Data</th>
-            <th  align="center" class="bor" colspan="2">{{count($peminjamanBarangList)}}</th>
-        </tr>
-        </tfoot>
     </table>
 @endsection

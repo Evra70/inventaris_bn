@@ -5,45 +5,45 @@
 @section('action-title','Data Barang')
 
 @section('isi')
-    <table class='table table-bordered' style="border-collapse: collapse;">
+    <table border="1">
         <thead>
-        <tr align="center">
-            <th scope="col" class="bor">No</th>
-            <th scope="col" class="bor">Nama Barang</th>
-            <th scope="col" class="bor">Spesifikasi</th>
-            <th scope="col" class="bor">Lokasi</th>
-            <th scope="col" class="bor">Kondisi</th>
-            <th scope="col" class="bor">Sumber Dana</th>
-            <th scope="col" class="bor">Total Masuk</th>
-            <th scope="col" class="bor">Total Keluar</th>
-            <th scope="col" class="bor">Total Pinjam</th>
-            <th scope="col" class="bor">Total Barang</th>
+        <tr>
+            <th >NO</th>
+            <th >NAMA BARANG</th>
+            <th >SPESIFIKASI</th>
+            <th >LOKASI</th>
+            <th >KONDISI</th>
+            <th >SUMBER DANA</th>
+            <th >JUMLAH MASUK</th>
+            <th >JUMLAH KELUAR</th>
+            <th >JUMLAH PINJAM</th>
+            <th >TOTAL BARANG</th>
         </tr>
         </thead>
         <tbody>
         @php $i=1; @endphp
         @foreach($barangList as $barang)
             <tr scope="row">
-                <th align="center" class="bor">{{ $i++ }}</th>
-                <th align="center" class="bor">{{$barang->nama_barang}}</th>
-                <th align="center" class="bor">{{$barang->spesifikasi}}</th>
-                <th align="center" class="bor">{{$barang->lokasi}}</th>
-                <th align="center" class="bor">{{$barang->kondisi}}</th>
-                <th align="center" class="bor">{{$barang->sumber_dana}}</th>
-                <th align="center" class="bor">{{$barang->jml_masuk}}</th>
-                <th align="center" class="bor">{{$barang->jml_keluar}}</th>
-                <th align="center" class="bor">{{$barang->jml_pinjam}}</th>
-                <th align="center" class="bor">{{$barang->total_barang}}</th>
+                <td class="c">{{ $i++ }}</td>
+                <td class="r">{{$barang->nama_barang}}</td>
+                <td class="r">{{$barang->spesifikasi}}</td>
+                <td class="r">{{$barang->lokasi}}</td>
+                <td class="r">{{$barang->kondisi}}</td>
+                <td class="r">{{$barang->sumber_dana}}</td>
+                <td class="c">{{$barang->jml_masuk}}</td>
+                <td class="c">{{$barang->jml_keluar}}</td>
+                <td class="c">{{$barang->jml_pinjam}}</td>
+                <td class="c">{{$barang->total_barang}}</td>
             </tr>
         @endforeach
+        <tr>
+            <td colspan="4" style="font-weight: bold;">TOTAL DATA</td>
+            <td class="total" colspan="6">{{count($barangList)}}</td>
+        </tr>
         </tbody>
-        <tfoot>
-            <tr>
-                <th  align="center" class="bor" colspan="8">Total Data</th>
-                <th  align="center" class="bor" colspan="2">{{count($barangList)}}</th>
-            </tr>
-        </tfoot>
     </table>
-
-
+   <!--  <div id="notices">
+        <div>NOTICE:</div>
+        <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+    </div> -->
 @endsection

@@ -39,6 +39,25 @@ class ReportController extends Controller
         return $pdf->stream($date."_report_barang_masuk_pdf_".Auth::user()->fullname.".pdf");
     }
 
+    public function reportBeritaAcaraBarangKeluarListPdf(){
+        $barangKeluarList = BarangKeluar::where("tgl_keluar",Date('Ymd'))->orderByDesc('barang_keluar_id')->get();
+
+        $date = Date('Y_m_d');
+        $pdf = PDF::loadView('report.reportBeritaAcaraBarangKeluarPdf',['barangKeluarList'=>$barangKeluarList]);
+        return $pdf->stream($date."_report_berita_acara_barang_keluar_pdf_".Auth::user()->fullname.".pdf");
+    }
+
+    public function reportBeritaAcaraBarangMasukListPdf(){
+       $now = Date('Ymd');
+        $barangMasukList = DB::select("SELECT A.*, C.nama_suplier FROM t_barang_masuk A 
+                                      INNER JOIN t_suplier C ON A.suplier_id = C.suplier_id
+                                      WHERE tgl_masuk = '$now'
+                                      ORDER BY A.barang_masuk_id DESC ");
+        $date = Date('Y_m_d');
+        $pdf = PDF::loadView('report.reportBeritaAcaraBarangMasukPdf',['barangMasukList'=>$barangMasukList]);
+        return $pdf->stream($date."_report_berita_acara_barang_masuk_pdf_".Auth::user()->fullname.".pdf");
+    }
+
     public function reportPeminjamanBarangListPdf(){
         $peminjamanBarangList = DB::select("SELECT A.*, B.fullname, C.nama_barang FROM t_pinjam_barang A 
                                       INNER JOIN t_user B ON B.user_id = A.peminjam_id

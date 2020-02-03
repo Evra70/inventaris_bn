@@ -50,8 +50,10 @@
                             <th scope="col">Nama Barang</th>
                             <th scope="col">Nama Peminjam</th>
                             <th scope="col">Jumlah Pinjam</th>
+                            <th scope="col">Batas Kembali</th>
                             <th scope="col">Tanggal Kembali</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Keterangan</th>
                             <th scope="col"></th>
                         </tr>
                         </thead>
@@ -62,16 +64,30 @@
                             <td>{{$peminjamanBarang->nama_barang}}</td>
                             <td>{{$peminjamanBarang->fullname}}</td>
                             <td>{{$peminjamanBarang->jml_barang}}</td>
+                            <td>{{Date('d-m-Y',strtotime($peminjamanBarang->batas_kembali))}}</td>
+
                             @if($peminjamanBarang->tgl_kembali == '00000000')
                                 <td>--NONE--</td>
                             @else
                                 <td>{{Date('d-m-Y',strtotime($peminjamanBarang->tgl_kembali))}}</td>
                             @endif
+
                             @if($peminjamanBarang->kondisi == 'N')
-                                <td ><label class="btn btn-warning">Belum Kembali</label></td>
+                                <td ><label class="btn-warning">Belum Kembali</label></td>
                             @else
-                                <td ><label class="btn btn-success">Sudah Kembali</label></td>
+                                <td ><label class="btn-success">Sudah Kembali</label></td>
                             @endif
+
+                            @if($peminjamanBarang->status_kembali == -1)
+                                <td>--NONE--</td>
+                            @elseif(Date('Y-m-d',strtotime($peminjamanBarang->tgl_kembali)) == Date('Y-m-d',strtotime($peminjamanBarang->batas_kembali)))
+                                <td>Tepat Waktu</td>
+                            @elseif(Date('Y-m-d',strtotime($peminjamanBarang->batas_kembali)) > Date('Y-m-d',strtotime($peminjamanBarang->tgl_kembali)))
+                                <td>Lebih Cepat {{$peminjamanBarang->status_kembali}} Hari</td>
+                            @elseif(Date('Y-m-d',strtotime($peminjamanBarang->batas_kembali)) < Date('Y-m-d',strtotime($peminjamanBarang->tgl_kembali)))
+                                <td>Terlambat {{$peminjamanBarang->status_kembali}} Hari</td>
+                            @endif
+
                             @if($peminjamanBarang->kondisi == 'N' && Auth::guard('administrator')->check())
                             <td class="text-right">
                                 <div class="dropdown">

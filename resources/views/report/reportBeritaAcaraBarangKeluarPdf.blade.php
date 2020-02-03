@@ -1,8 +1,8 @@
 @extends('master.reportMaster')
 
-@section('title','Laporan Barang Keluar')
+@section('title','Laporan Berita Acara Barang Keluar')
 
-@section('action-title','Data Barang Keluar')
+@section('action-title','Berita Acara Barang Keluar')
 
 @section('isi')
     <table border="1">

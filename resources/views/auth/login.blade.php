@@ -87,12 +87,6 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="custom-control custom-control-alternative custom-checkbox">
-                                <input type="checkbox" name="remember" class="custom-control-input" id=" customCheckLogin" {{ old('remember') ? 'checked' : '' }}>
-                                <label class="custom-control-label" for=" customCheckLogin">
-                                    <span class="text-muted">Remember me</span>
-                                </label>
-                            </div>
                             <div class="text-center">
                                 <input type="submit" class="btn btn-primary my-4" value="Sign in">
                             </div>

@@ -173,6 +173,16 @@
                         <i class="ni ni-ruler-pencil text-blue"></i> Laporan Peminjaman Barang
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/menu/reportBeritaAcaraBarangMasukList">
+                        <i class="ni ni-cart text-blue"></i> Laporan Berita Acara Barang Masuk
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/menu/reportBeritaAcaraBarangKeluarList">
+                        <i class="ni ni-curved-next text-blue"></i> Laporan Berita Acara Barang Keluar
+                    </a>
+                </li>
             </ul>
                 @endif
         </div>

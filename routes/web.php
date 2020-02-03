@@ -81,6 +81,8 @@ Route::post('/search/peminjamanBarangList','PeminjamanBarangController@getPeminj
 Route::get('/menu/reportBarangList','ReportController@reportBarangListPdf')->middleware('auth:manajemen');
 Route::get('/menu/reportBarangKeluarList','ReportController@reportBarangKeluarListPdf')->middleware('auth:manajemen');
 Route::get('/menu/reportBarangMasukList','ReportController@reportBarangMasukListPdf')->middleware('auth:manajemen');
+Route::get('/menu/reportBeritaAcaraBarangKeluarList','ReportController@reportBeritaAcaraBarangKeluarListPdf')->middleware('auth:manajemen');
+Route::get('/menu/reportBeritaAcaraBarangMasukList','ReportController@reportBeritaAcaraBarangMasukListPdf')->middleware('auth:manajemen');
 Route::get('/menu/reportPeminjamanBarangList','ReportController@reportPeminjamanBarangListPdf')->middleware('auth:manajemen');
 
 Route::post('/proses_login', 'LoginController@masuk');

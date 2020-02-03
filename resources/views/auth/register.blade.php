@@ -122,6 +122,19 @@
                                     </span>
                                 @endif
                             </div>
+                            <div class="form-group{{ $errors->has('confirm_password') ? ' has-error' : '' }}">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="Confirm Password" type="password" name="confirm_password">
+                                </div>
+                                @if ($errors->has('confirm_password'))
+                                    <span class="help-block" style="color:red;">
+                                        <strong>{{ $errors->first('confirm_password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                             <div class="text-center">
                                 <input type="submit" class="btn btn-primary mt-4" value="Create account">
                             </div>
